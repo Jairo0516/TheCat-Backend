@@ -42,11 +42,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 Open `TheCat-Backend/` then edit it with your settings. You will need:
 
-- A setting;
-- Another setting;
-- One more setting;
+- npm install
 
 ## Running the project
-
-    $ npm install
     $ npm start
