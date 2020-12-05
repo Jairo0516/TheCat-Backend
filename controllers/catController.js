@@ -1,6 +1,7 @@
 'use strict'
 const StructureResponse = require('../utils/structure.response')
 const CatModel = require('../models/catSchema')
+const axios = require('axios')
 
 class Cat {
     async store(data) {
@@ -42,6 +43,17 @@ class Cat {
             return StructureResponse(false, `Se ha eliminado ${cat.name}`, {})
         }
         return StructureResponse(true, "No se ha eliminado correctamente.", {})
+    }
+
+    async allBreeds() {
+        const {data} = await axios.get('https://api.thecatapi.com/v1/breeds', {
+            headers: {
+                "x-api-key": "f221c99b-304d-4404-b111-cbd3ddccf31a",
+            }
+        })
+        let names = []
+        names.push(data.map((breed) => breed.name));
+        return StructureResponse(false, "", {names: names[0]})
     }
 }
 

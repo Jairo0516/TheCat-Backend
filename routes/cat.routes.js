@@ -3,6 +3,10 @@ const express = require('express')
 const asyncify = require('express-asyncify')
 const routes = asyncify(express.Router())
 const CatController = require('../controllers/catController')
+routes.get('/razas', async (request, response) => {
+    const data = await CatController.allBreeds()
+    response.json(data)
+})
 routes.get('/', async (request, response) => {
     const data = await CatController.all()
     response.json(data)
