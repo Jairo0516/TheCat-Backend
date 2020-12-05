@@ -27,7 +27,7 @@ class Cat {
                 "x-api-key": "f221c99b-304d-4404-b111-cbd3ddccf31a",
             }
         })
-        return StructureResponse(false, "", data)
+        return StructureResponse(false, "Se ha agregado como favorito, con exito", data)
     }
 }
 
