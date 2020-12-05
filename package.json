@@ -2,14 +2,19 @@
   "name": "thecat-backend",
   "version": "1.0.0",
   "description": "backend the cat",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon start app.js",
+    "production": "node start app.js"
   },
   "author": "Jairo Sotelo",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-asyncify": "^1.0.1",
+    "mongoose": "^5.11.4",
     "nodemon": "^2.0.6"
   }
 }
