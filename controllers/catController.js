@@ -8,7 +8,6 @@ class Cat {
         const isExist = await CatModel.get({name: data.name})
         if (!isExist._id) {
             const cat = await CatModel.create(data)
-            console.log(cat)
             return StructureResponse(false, "Datos almacenados correctamente.", cat)
         }
         return StructureResponse(true, "Error ya se encuentra registrado este nombre", {})
